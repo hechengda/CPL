@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+/*print Fahrenheit-Celsius table in reverse order*/
+int e1_5main()
+{
+    int fahr;
+
+    for (fahr = 300; fahr >= 0; fahr -= 20)
+    {
+        printf("%3d %6.1f\n", fahr, (5.f / 9.f) * (fahr - 32));
+    }
+
+    return 0;
+}
