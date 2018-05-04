@@ -10,6 +10,7 @@ unsigned rightrot1(unsigned x, int n)
         x >>= 1;
         x |= rbit;      /*complete one rotation*/
     }
+    return x;
 }
 
 unsigned rightrot2(unsigned x, int n)
@@ -24,6 +25,7 @@ unsigned rightrot2(unsigned x, int n)
         x >>= n;        /*x shifted n positions right*/
         x |= rbits;     /*rotation completed*/
     }
+    return x;
 }
 
 /*computes word length of the machine*/
