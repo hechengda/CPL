@@ -10,7 +10,7 @@ void itoa(int n, char s[], int w)
     do
     {/*generate digits in reverse order*/
         s[i++] = abs(n % 10) + '0';
-    } while ((n /= 10) != 0);
+    } while (n /= 10);
     if (sign < 0)
     {
         s[i++] = '-';
@@ -20,5 +20,5 @@ void itoa(int n, char s[], int w)
         s[i++] = ' ';
     }
     s[i] = '\0';
-    /*do reverse op, see S3.5.cpp*/
+    reverse(s);     /*do reverse op, see S3.5.cpp*/
 }

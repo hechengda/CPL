@@ -17,5 +17,5 @@ void itoa(int n, char s[])
         s[i++] = '-';
     }
     s[i] = '\0';
-    /*do reverse op, see S3.5.cpp*/
+    reverse(s);     /*do reverse op, see S3.5.cpp*/
 }

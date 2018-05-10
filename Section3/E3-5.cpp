@@ -11,11 +11,11 @@ void itob(int n, char s[], int b)
     {/*generate digits in reverse order*/
         j = abs(n % b);
         s[i++] = (j <= 9) ? (j + '0') : (j + 'a' - 10);
-    } while ((n /= b) != 0);
+    } while (n /= b);
     if (sign < 0)
     {
         s[i++] = '-';
     }
     s[i] = '\0';
-    /*do reverse op, see S3.5.cpp*/
+    reverse(s);     /*do reverse op, see S3.5.cpp*/
 }
