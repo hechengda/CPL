@@ -6,10 +6,9 @@ int htoi(char s[])
     int i, n, hexdigit;
 
     i = 0;
-    if (s[i] == '0')
+    if (s[i++] == '0')
     {/*skip optional 0x or 0X*/
-        i++;
-        if (tolower(s[i]) == 'x')
+        if (s[i] == 'x' || s[i] == 'X')
         {
             i++;
         }

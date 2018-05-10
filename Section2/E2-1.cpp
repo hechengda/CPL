@@ -2,7 +2,7 @@
 #include <limits.h>
 
 /*determine ranges of types*/
-int e2_1main()
+int main()
 {
     /*signed types*/
     printf("signed char min     = %d - %d\n", SCHAR_MIN, -(char)((unsigned char) ~0 >> 1) - 1);
