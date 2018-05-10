@@ -15,24 +15,24 @@ double atof(char s[])
     {/*skip sign char*/
         i++;
     }
-    for (val = 0.; isdigit(s[i]); i++)
+    for (val = 0.0; isdigit(s[i]); i++)
     {
-        val = 10. * val + (s[i] - '0');
+        val = 10.0 * val + (s[i] - '0');
     }
     if (s[i] == '.')
     {/*skip dot char*/
         i++;
     }
-    for (power = 1.; isdigit(s[i]); i++)
+    for (power = 1.0; isdigit(s[i]); i++)
     {
-        val = 10. * val + (s[i] - '0');
-        power *= 10.;
+        val = 10.0 * val + (s[i] - '0');
+        power *= 10.0;
     }
     val = sign * val / power;
 
     if (s[i] == 'e' || s[i] == 'E')
     {
-        sign = (s[i] == '-') ? -1 : 1;
+        sign = (s[++i] == '-') ? -1 : 1;
         if (s[i] == '+' || s[i] == '-')
         {/*skip the sign char*/
             i++;

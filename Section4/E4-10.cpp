@@ -24,7 +24,9 @@ int getop(char s[])
         }
     }
     while ((s[0] = c = line[li++]) == ' ' || c == '\t')
+    {
         ;
+    }
     s[1] = '\0';
     if (!isdigit(c) && c != '.')
     {/*not number*/
@@ -32,11 +34,19 @@ int getop(char s[])
     }
     i = 0;
     if (isdigit(c))
+    {
         while (isdigit(s[++i] = c = line[li++]))
+        {
             ;
+        }
+    }
     if (c == '.')
+    {
         while (isdigit(s[++i] = c = line[li++]))
+        {
             ;
+        }
+    }
     s[i] = '\0';
     li--;
     return NUMBER;

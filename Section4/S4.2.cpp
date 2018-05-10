@@ -15,9 +15,9 @@ double atof(char s[])
     {/*skip the sign char*/
         i++;
     }
-    for (val = 0.; isdigit(s[i]); i++)
+    for (val = 0.0; isdigit(s[i]); i++)
     {
-        val = 10. * val + (s[i] - '0');
+        val = 10.0 * val + (s[i] - '0');
     }
     if (s[i] == '.')
     {/*skip the dot char*/
@@ -25,8 +25,8 @@ double atof(char s[])
     }
     for (power = 1.; isdigit(s[i]); i++)
     {
-        val = 10. * val + (s[i] - '0');
-        power *= 10.;
+        val = 10.0 * val + (s[i] - '0');
+        power *= 10.0;
     }
     return sign * val / power;
 }

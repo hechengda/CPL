@@ -9,7 +9,9 @@ int strrindex1(char s[], char t[])
     for (i = 0; s[i] != '\0'; i++)
     {
         for (j = i, k = 0; t[k] != '\0' && s[j] == t[k]; j++, k++)
+        {
             ;
+        }
         if (k > 0 && t[k] == '\0')
             pos = i;
     }
@@ -23,7 +25,9 @@ int strrindex2(char s[], char t[])
     for (i = strlen(s) - strlen(t); i >= 0; i--)
     {
         for (j = i, k = 0; t[k] != '\0' && s[j] == t[k]; j++, k++)
+        {
             ;
+        }
         if (k > 0 && t[k] == '\0')
         {
             return i;

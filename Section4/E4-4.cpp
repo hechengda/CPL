@@ -1,14 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>     /*for atof()*/
 #include <math.h>       /*for fmod()*/
+#include "calc.h"
 
 #define MAXOP   100     /*max size of operand or operator*/
-#define NUMBER  '0'     /*signal that a number was found*/
-
-void push(double);
-double pop(void);
-void clear(void);
-int getop(char[]);
 
 /*reverse Polish calculator*/
 int main()
@@ -85,110 +80,4 @@ int main()
     }
 
     return 0;
-}
-
-#define MAXVAL  100
-
-int sp = 0;
-double val[MAXVAL];
-
-void push(double f)
-{
-    if (sp < MAXVAL)
-    {
-        val[sp++] = f;
-    }
-    else
-    {
-        printf("error: stack full, can't push %g\n", f);
-    }
-}
-
-double pop(void)
-{
-    if (sp > 0)
-    {
-        return val[--sp];
-    }
-    else
-    {
-        printf("error:stack empty, can't pop\n");
-        return 0.0;
-    }
-}
-
-/*clear the stack*/
-void clear(void)
-{
-    sp = 0;
-}
-
-#include <ctype.h>
-
-int getch(void);
-void ungetch(int);
-
-/*get next operator or numeric operand*/
-int getop(char s[])
-{
-    int i, c;
-
-    while ((s[0] = c = getch()) == ' ' || c == '\t')
-        ;
-    s[1] = '\0';
-    if (!isdigit(c) && c != '.' && c != '-')
-    {/*not a number*/
-        return c;
-    }
-
-    i = 0;
-    if (c == '-')
-    {
-        if (isdigit(c = getch()) || c == '.')
-        {/*negative number*/
-            s[++i] = c;
-        }
-        else
-        {
-            if (c != EOF)
-            {
-                ungetch(c);
-                return '-';     /*minus sign*/
-            }
-        }
-    }
-    if (isdigit(c))
-    {/*collect integer part*/
-        while (isdigit(s[++i] = c = getch()))
-            ;
-    }
-    if (c == '.')
-    {/*collect fraction part*/
-        while (isdigit(s[++i] = c = getch()))
-            ;
-    }
-    s[i] = '\0';
-    if (c != EOF)
-    {
-        ungetch(c);
-    }
-    return NUMBER;
-}
-
-#define BUFSIZE 100
-
-char buf[BUFSIZE];
-int bufp = 0;
-
-int getch(void)
-{
-    return (bufp > 0) ? buf[--bufp] : getchar();
-}
-
-void ungetch(int c)
-{
-    if (bufp < BUFSIZE)
-        buf[bufp++] = c;
-    else
-        printf("ungetch: too many chars\n");
 }

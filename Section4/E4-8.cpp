@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-char buf = 0;
+static char buf = 0;
 
 /*get a (possibly pushed back) char*/
 int getch(void)
