@@ -2,17 +2,17 @@
 
 #define MAXLINE 1000        /*max input line size*/
 
-int e1_16getline(char line[], int lim);
+int getline(char line[], int lim);
 void copy(char to[], char from[]);
 
 /*print longest input line*/
-int e1_16main()
+int main()
 {
     int len, max;
     char line[MAXLINE], longest[MAXLINE];
 
     max = 0;
-    while ((len = e1_16getline(line, MAXLINE)) > 0)
+    while ((len = getline(line, MAXLINE)) > 0)
     {
         printf("%d, %s", len, line);
         if (len > max)
@@ -29,7 +29,7 @@ int e1_16main()
     return 0;
 }
 
-int e1_16getline(char line[], int lim)
+int getline(char line[], int lim)
 {
     int c, i, j;
 
@@ -53,7 +53,7 @@ int e1_16getline(char line[], int lim)
 void copy(char to[], char from[])
 {
     int i = 0;
-    while ((to[i] = from[i]) != '\0')
+    while (to[i] = from[i])
     {
         i++;
     }

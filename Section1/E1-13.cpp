@@ -6,7 +6,7 @@
 #define OUT     0
 
 /*print horizontal & vertical histogram*/
-int e1_13main()
+int main()
 {
     int c, i, nc, state;
     int len;            /*length of each bar*/
@@ -65,7 +65,7 @@ int e1_13main()
         if (wl[i] > 0)
         {
             if ((len = wl[i] * MAXHIST / maxvalue) <= 0)
-            {
+            {/*length is at least 1*/
                 len = 1;
             }
         }

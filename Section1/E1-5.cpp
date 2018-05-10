@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*print Fahrenheit-Celsius table in reverse order*/
-int e1_5main()
+int main()
 {
     int fahr;
 

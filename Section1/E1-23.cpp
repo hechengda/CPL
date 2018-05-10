@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 void remove_comment(int c);
-void e1_23in_comment(void);
+void in_comment(void);
 void echo_quote(int c);
 
 /*remove all comments from a valid C program*/
-int e1_23main()
+int main()
 {
     int c;
 
@@ -26,7 +26,7 @@ void remove_comment(int c)
     {
         if ((d = getchar()) == '*')
         {/* start of comment*/
-            e1_23in_comment();
+            in_comment();
         }
         else if (d == '/')
         {/*another slash*/
@@ -50,7 +50,7 @@ void remove_comment(int c)
 }
 
 /*inside of a valid comment*/
-void e1_23in_comment(void)
+void in_comment(void)
 {
     int c, d;
 

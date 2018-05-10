@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*count blanks, tabs and newlines*/
-int e1_8main()
+int main()
 {
     int c, nb, nt, nl;
 

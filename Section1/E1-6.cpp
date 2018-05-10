@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int e1_6main()
+int main()
 {
     int c;
 

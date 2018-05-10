@@ -3,7 +3,7 @@
 #define NONBLANK    'a'
 
 /*replace string of blanks with a single blank*/
-int e1_9main()
+int main()
 {
     int c, lastc;
 

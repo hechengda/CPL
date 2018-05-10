@@ -3,7 +3,7 @@
 #define IN  1
 #define OUT 0
 
-int s1_5_4main()
+int main()
 {
     int c, nl, nw, nc, state;
 
@@ -13,7 +13,9 @@ int s1_5_4main()
     {
         ++nc;
         if (c == '\n')
+        {
             ++nl;
+        }
         if (c == ' ' || c == '\t' || c == '\n')
         {
             state = OUT;

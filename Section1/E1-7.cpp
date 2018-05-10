@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int e1_7main()
+int main()
 {
     printf("EOF is %d\n", EOF);
 

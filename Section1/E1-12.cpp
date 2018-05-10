@@ -4,7 +4,7 @@
 #define OUT 0
 
 /*print input one word per line*/
-int e1_12main()
+int main()
 {
     int c, state;
 

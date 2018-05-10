@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int s1_1main()
+int main()
 {
     printf("hello, world\n");
 

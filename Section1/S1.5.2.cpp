@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int s1_5_2main()
+int main()
 {
     long nc;
 

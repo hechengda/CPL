@@ -2,13 +2,13 @@
 
 #define MAXLINE 1000
 
-int getline(char line[], int lim);
 void reverse(char s[]);
 
 /*reverse input lines, a line at a time*/
-int e1_19main()
+int main()
 {
     char line[MAXLINE];
+    int getline(char line[], int limit);        /*see E1-16.cpp*/
 
     while (getline(line, MAXLINE) > 0)
     {
@@ -19,34 +19,13 @@ int e1_19main()
     return 0;
 }
 
-int getline(char line[], int lim)
-{
-    int c, i, j;
-
-    for (i = 0, j = 0; (c = getchar()) != EOF && c != '\n'; i++)
-    {
-        if (i < lim - 2)
-        {
-            line[j++] = c;
-        }
-    }
-    if (c == '\n')
-    {
-        line[j++] = c;
-        i++;
-    }
-    line[j] = '\0';
-
-    return i;
-}
-
 void reverse(char s[])
 {
     int i, j;
     char temp;
 
     i = 0;
-    while (s[i] != '\0')
+    while (s[i])
     {/*find the end of string*/
         i++;
     }

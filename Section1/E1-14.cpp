@@ -5,7 +5,7 @@
 #define MAXCHAR 128     /*max different chars*/
 
 /*print horizontal histogram freq. of different chars*/
-int e1_14main()
+int main()
 {
     int c, i;
     int len;                /*length of each bar*/
@@ -53,7 +53,7 @@ int e1_14main()
         {
             len = 0;
         }
-        while (len--)
+        while (len-- > 0)
         {
             putchar('*');
         }

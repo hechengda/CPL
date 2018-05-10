@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-#define TABINC  8       /*tab increment size*/
+#define TABINC  4       /*tab increment size*/
 
 /*replace tabs with the proper # of blanks*/
-int e1_20main()
+int main()
 {
     int c, nb, pos;
 
@@ -14,17 +14,16 @@ int e1_20main()
         if (c == '\t')
         {/*tab char*/
             nb = TABINC - pos % TABINC;
-            while (nb)
+            while (nb-- > 0)
             {
                 putchar(' ');
                 pos++;
-                nb--;
             }
         }
         else if (c == '\n')
         {/*newline char*/
             putchar(c);
-            pos = 0;
+            pos = 0;        /*reset position*/
         }
         else
         {/*other chars*/

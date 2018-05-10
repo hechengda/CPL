@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 #define MAXCOL  20      /*max column of input*/
-#define TABINC  8       /*tab increment size*/
+#define TABINC  4       /*tab increment size*/
 
 char line[MAXCOL];      /*input line*/
 
@@ -11,7 +11,7 @@ int newpos(int pos);
 void printl(int pos);
 
 /*fold long input lines into two or more shorter lines*/
-int e1_22main()
+int main()
 {
     int c, pos = 0;
     while ((c = getchar()) != EOF)
@@ -41,10 +41,9 @@ int e1_22main()
 int exptab(int pos)
 {
     int nb = TABINC - pos % TABINC;     /*# of blanks necessary*/
-    while (nb)
+    while (nb-- > 0)
     {
         line[pos++] = ' ';
-        nb--;
     }
     if (pos < MAXCOL)
     {/*room left in current line*/
@@ -63,7 +62,7 @@ int findblnk(int pos)
     do
     {
         pos--;
-    } while (pos && line[pos] != ' ');
+    } while (pos > 0 && line[pos] != ' ');
     if (!pos)
     {/*no blanks in the line*/
         return MAXCOL;
@@ -99,7 +98,7 @@ void printl(int pos)
     {
         putchar(line[i]);
     }
-    if (pos)
+    if (pos > 0)
     {
         putchar('\n');
     }

@@ -2,7 +2,7 @@
 
 int power(int base, int n);
 
-int s1_7main()
+int main()
 {
     for (int i = 0; i < 10; i++)
     {
@@ -15,7 +15,7 @@ int s1_7main()
 int power(int base, int n)
 {
     int p = 1;
-    while (n--)
+    while (n-- > 0)
     {
         p *= base;
     }

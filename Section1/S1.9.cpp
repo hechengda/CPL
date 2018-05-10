@@ -2,21 +2,21 @@
 
 #define MAXLINE 1000
 
-int s1_9getline(char line[], int lim);
-void s1_9copy(char to[], char from[]);
+int getline(char line[], int lim);
+void copy(char to[], char from[]);
 
-int s1_9main()
+int main()
 {
     int len, max;
     char line[MAXLINE], longest[MAXLINE];
 
     max = 0;
-    while ((len = s1_9getline(line, MAXLINE)) > 0)
+    while ((len = getline(line, MAXLINE)) > 0)
     {
         if (len > max)
         {
             max = len;
-            s1_9copy(longest, line);
+            copy(longest, line);
         }
     }
     if (max > 0)
@@ -27,7 +27,7 @@ int s1_9main()
     return 0;
 }
 
-int s1_9getline(char line[], int lim)
+int getline(char line[], int lim)
 {
     int c, i;
 
@@ -44,10 +44,10 @@ int s1_9getline(char line[], int lim)
     return i;
 }
 
-void s1_9copy(char to[], char from[])
+void copy(char to[], char from[])
 {
     int i = 0;
-    while ((to[i] = from[i]) != '\0')
+    while (to[i] = from[i])
     {
         i++;
     }

@@ -3,13 +3,13 @@
 int brace, brack, paren;
 
 void in_quote(int c);
-void in_comment(void);
 void search(int c);
 
 /*rudimentary syntax checher for C programs*/
-int e1_24main()
+int main()
 {
     int c;
+    void in_comment(void);      /*see E1-23.cpp*/
 
     while ((c = getchar()) != EOF)
     {
@@ -77,20 +77,6 @@ void in_quote(int c)
         {/*ignore escape seq*/
             getchar();
         }
-    }
-}
-
-/*inside of a valid comment*/
-void in_comment(void)
-{
-    int c, d;
-    
-    c = getchar();      /*prev char*/
-    d = getchar();      /*curr char*/
-    while (c != '*' || d != '/')
-    {/*search for end*/
-        c = d;
-        d = getchar();
     }
 }
 
